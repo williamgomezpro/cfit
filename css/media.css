@@ -1,0 +1,26 @@
+@media only screen and (max-width: 660px){
+    
+    .logo-container{
+        display: none;
+    }
+
+    .panel-container{
+        grid-column: 1 / span 12;
+    }
+
+}
+@media only screen and (max-width: 360px){
+    
+    #container{
+       padding: 0;
+    }
+
+    .panel{
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .panel__heading{
+        margin-top: 24px;
+    }
+}
