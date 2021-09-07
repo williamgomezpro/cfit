@@ -11,7 +11,7 @@ function cambiarFondo(){
 window.onload = cambiarFondo();
 
 // evento al hacer click en el botón de calcular
-calcular.addEventListener('click', function(){
+$("#calcular").on('click', function(){
     // evento submit del formulario, evita recargar la página
     formulario.addEventListener('submit',(e) => e.preventDefault());
 
@@ -93,17 +93,17 @@ calcular.addEventListener('click', function(){
                 break;        
         }
                 
-        // imprimo el resultado en el HTML
-        let resultado = document.querySelector(".output");
-        resultado.innerHTML = 
+        // renderizando el resultado
+        let resultado = $(".output");
+        resultado.append(
         `<p>
             <span>${nombre.toUpperCase()} ${apellido.toUpperCase()}</span> su gasto energético basal es de: <span>${new Intl.NumberFormat().format(tmb)} Kcal.</span>
         </p>
         <p>
             Según el Nivel de Actividad Fisica y el Objetivo seleccionado usted debe consumir: <span>${new Intl.NumberFormat().format(objetivo)} Kcal</span>
-        </p>`;
+        </p>`);
     } else {
-        let resultado = document.querySelector(".output");
-        resultado.innerHTML = "";
+        let resultado = $(".output");
+        resultado.append("");
     } 
 });
