@@ -5,10 +5,11 @@ const imagenes = ["bg.jpeg", "bg-two.jpeg", "bg-three.jpeg"];
 function cambiarFondo(){
     let randomNumber = Math.floor(Math.random() * imagenes.length);
     document.body.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(./img/${imagenes[randomNumber]})`;
+    document.body.style.backgroundSize = 'cover';
 }
 
 // cambia aleatoriamente el fondo al cargar la página 
-window.onload = cambiarFondo();
+    window.onload = cambiarFondo();
 
 // evento al hacer click en el botón de calcular
 $("#calcular").on('click', function(){

@@ -9,16 +9,16 @@
     }
 
 }
-@media only screen and (max-width: 360px){
+@media only screen and (max-width: 380px){
     
     #container{
        padding: 0;
-       height: 100vh;
+       height: 100%;
     }
 
     .panel{
-        height: 100vh;
         border-radius: 0;
+        box-shadow: none;
     }
 
     .panel__heading{
