@@ -72,7 +72,6 @@ $("#calcular").on('click', function(){
             field = 0; 
         } 
     }
-    
     // controlo si hay input vacios del form, calculos e impresión sobre el documento HTML
     if (field != 0){
         // invocación del objeto Persona
@@ -94,16 +93,10 @@ $("#calcular").on('click', function(){
         }
                 
         // renderizando el resultado
-        let resultado = $(".output");
-        resultado.append(
-        `<p>
-            <span>${nombre.toUpperCase()} ${apellido.toUpperCase()}</span> su gasto energético basal es de: <span>${new Intl.NumberFormat().format(tmb)} Kcal.</span>
-        </p>
-        <p>
-            Según el Nivel de Actividad Fisica y el Objetivo seleccionado usted debe consumir: <span>${new Intl.NumberFormat().format(objetivo)} Kcal</span>
-        </p>`);
+        $(".output").html(`<p><span>${nombre.toUpperCase()} ${apellido.toUpperCase()}</span> su gasto energético basal es de: <span>${new Intl.NumberFormat().format(tmb)} Kcal.</span></p>
+                <p>Según el Nivel de Actividad Fisica y el Objetivo seleccionado usted debe consumir: <span>${new Intl.NumberFormat().format(objetivo)} Kcal</span></p>`).hide();
+        $(".output").slideDown(1000); // oculto el elemento anterior para poder realizar el efecto de slideDown
     } else {
-        let resultado = $(".output");
-        resultado.append("");
+        $(".output").slideUp(1000); // efecto de sliedeUp en caso de estar algún elemento del formulario vacío
     } 
 });
